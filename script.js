@@ -223,12 +223,12 @@ class Root {
         return new Promise(async (resolve, reject) => {
             if (this.commands[cmd]) {
                 var x = await this.commands[cmd].exec(params);
-                this.typewrite(`\n${x}\n\n`, 1);
+                this.typewrite(`\n${x}\n\n`, 0);
                 setTimeout(() => resolve(cmd), (x.length + 3))
             }
             else {
                 var x = `\nCommand '${cmd}' not found. Type 'help' for a list of commands.\n\n`
-                this.typewrite(x, 7);
+                this.typewrite(x, 0);
                 setTimeout(() => resolve(cmd), x.length)
             }
         })
