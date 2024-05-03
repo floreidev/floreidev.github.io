@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#dosOut {
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+body,
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+.ms-dos-win {
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: green;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 8px;
+}
+
+
+br:first-of-type {
+    margin-top: 8px;
+}
+
+br:last-of-type {
+    margin-bottom: 8px;
+}
+
+.ms-dos-win>p {
+    display: flex;
+    position: relative;
+    white-space: nowrap;
+}
+
+#dosLatest {
+    display: flex;
+}
+
+#dosIn {
+    max-height: 1em;
+    background: none;
+    outline: none;
+    border: none;
+    color: green;
+    font-family: monospace;
+    caret-color: transparent;
+    position: relative;
+}
+
+#dosIn::after {
+    content: '█';
+    color: green;
+    right: var(--offset);
+    position: absolute;
+}
+
+.breaker {
+}
+
+#dosIn * {
+    --offset: -0.5em;
+    display: none;
+}
+
+#dosIn::-moz-selection {
+    color: black;
+    background: green;
+}
+
+#dosIn::selection {
+    color: black;
+    background: green;
+}
