@@ -223,7 +223,7 @@ class Root {
         return new Promise(async (resolve, reject) => {
             if (this.commands[cmd]) {
                 var x = await this.commands[cmd].exec(params);
-                this.typewrite(`\n${x}\n`, 1);
+                this.typewrite(`\n${x}\n\n`, 1);
                 setTimeout(() => resolve(cmd), (x.length + 3))
             }
             else {
